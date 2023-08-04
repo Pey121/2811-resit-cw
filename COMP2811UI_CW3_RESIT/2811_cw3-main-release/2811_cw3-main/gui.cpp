@@ -20,6 +20,8 @@ void GUI::createWidgets()  {
 
     on  = new QPushButton("on" );
     off = new QPushButton("off");
+    out  = new QPushButton("out" );
+    sleep = new QPushButton("sleep");
 }
 
 void GUI::arrangeWidgets() {
