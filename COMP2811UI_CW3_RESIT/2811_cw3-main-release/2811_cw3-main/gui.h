@@ -43,6 +43,7 @@ private:
 
     void makeConnections();
 
+
 private slots:
 
     void timeChanged(QTime* time);

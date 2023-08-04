@@ -20,8 +20,9 @@ void Simple_layout::setGeometry(const QRect &rect)
     for(int i=0;i<m_list.size();i++){
         QLayoutItem *o = m_list.at(i);
         ResponsiveLabel *label = static_cast<ResponsiveLabel *>(o->widget());
-            if   (label -> text() == kNavArea ) // headers go at the top
+            if   (label -> text() == kNavArea )
                 label -> setGeometry(0+rect.x(),0+rect.y(),rect.width(), rect.height());
+            // occru all space for
             else if(label->text() == kSongsBackward){
                     label->setGeometry(rect.width()/2-w_lenth/2,rect.y(),w_lenth/2,40);
                 }else if(label->text() == kSongsForward){

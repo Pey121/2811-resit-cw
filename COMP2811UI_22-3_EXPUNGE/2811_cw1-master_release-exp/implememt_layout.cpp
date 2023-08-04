@@ -16,7 +16,7 @@ void implememt_layout::setGeometry(const QRect &rect)
     if(0 == m_list.size())
         return;
     if (( rect.width() >rect.height())){
-        //horizonal layout
+        //horizonal
 
         int h_len1=rect.width()/5;
         QLayoutItem *o = m_list.at(0);

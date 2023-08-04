@@ -25,12 +25,17 @@ void GUI::createWidgets()  {
 void GUI::arrangeWidgets() {
 
     // super-simple layout
-    QLayout  *layout = new QHBoxLayout();
-    setLayout(layout);
+    QLayout  *showlayout = new QVBoxLayout();
+    QLayout  *turnlayout = new QHBoxLayout();
 
-    layout -> addWidget(timeDisplay);
-    layout -> addWidget( on  );
-    layout -> addWidget( off );
+    turnlayout ->addWidget(off);
+    turnlayout ->addWidget(on);
+    QWidget * turn = new QWidget();
+    turn ->setLayout(turnlayout);
+
+    showlayout -> addWidget(timeDisplay);
+    showlayout -> addWidget( turn  );
+    setLayout(showlayout);
 
 }
 

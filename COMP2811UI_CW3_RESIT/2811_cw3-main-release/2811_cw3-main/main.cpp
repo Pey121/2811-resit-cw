@@ -41,6 +41,8 @@ int main(int argc, char *argv[]) {
     statusWindow.setGeometry(gui.geometry().x(), gui.geometry().y() + gui.geometry().height() + 30,
                              statusWindow.geometry().width(), statusWindow.geometry().height());
 
+    gui.setMinimumSize(20*37.795,10*37.795);
+
     // wait for the app to terminate
     return app.exec();
 }
