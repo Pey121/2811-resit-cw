@@ -22,6 +22,7 @@ void GUI::createWidgets()  {
     off = new QPushButton("off");
     out  = new QPushButton("out" );
     sleep = new QPushButton("sleep");
+    choice = new QSlider(Qt::Horizontal);
 }
 
 void GUI::arrangeWidgets() {
@@ -29,6 +30,9 @@ void GUI::arrangeWidgets() {
     // super-simple layout
     QLayout  *showlayout = new QVBoxLayout();
     QLayout  *turnlayout = new QHBoxLayout();
+    QLayout  *tartem_layout = new QHBoxLayout();
+
+    tartem_layout->addWidget(tartem);
 
     turnlayout ->addWidget(off);
     turnlayout ->addWidget(on);

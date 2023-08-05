@@ -12,7 +12,11 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QWidget>
+#include <QSpinBox>
+#include <QSlider>
+#include <QLCDNumber>
 #include <status.h>
+
 
 class GUI : public QWidget {
 
@@ -23,6 +27,11 @@ class GUI : public QWidget {
     QLineEdit* timeDisplay;
     QPushButton*  on;
     QPushButton* off;
+    QPushButton* out;
+    QPushButton* sleep;
+    QSpinBox* a;
+    QSlider* choice;
+    QLCDNumber* tartem;
 
 public:
     GUI(Status *status) : status(status) {
