@@ -36,7 +36,7 @@ class GUI : public QWidget {
     QLCDNumber* tartem;
     QTimeEdit* levave;
     QTimeEdit* comeback;
-    QTimeEdit* sleep;
+    QTimeEdit* sleepshow;
     QTimeEdit* wake;
 
 public:

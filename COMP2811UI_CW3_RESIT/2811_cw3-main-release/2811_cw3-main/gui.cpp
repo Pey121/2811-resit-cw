@@ -46,7 +46,7 @@ void GUI::arrangeWidgets() {
     mode_layout_out -> addWidget(out);
     mode_layout_out -> addWidget(comeback);
 
-    mode_widget_1 -> setlayout(mode_layout_out);
+    mode_widget_1 -> setLayout(mode_layout_out);
 
 // set mode part (sleep)
     QWidget * mode_widget_2 = new QWidget();
@@ -54,13 +54,13 @@ void GUI::arrangeWidgets() {
     mode_layout_sleep -> addWidget(sleep);
     mode_layout_sleep -> addWidget(wake);
 
-    mode_widget_2 -> setlayout(mode_layout_sleep);
+    mode_widget_2 -> setLayout(mode_layout_sleep);
 
 // combine the two widget
     QWidget * mode_part = new QWidget();
     modelayout ->addWidget(mode_widget_1);
     modelayout ->addWidget(mode_widget_2);
-    mode_part -> setlayout(mode_part);
+    mode_part -> setLayout(modelayout);
 
 
 // set target part
