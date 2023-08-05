@@ -34,7 +34,10 @@ class GUI : public QWidget {
     QSpinBox* a;
     QSlider* choice;
     QLCDNumber* tartem;
-    
+    QTimeEdit* levave;
+    QTimeEdit* comeback;
+    QTimeEdit* sleep;
+    QTimeEdit* wake;
 
 public:
     GUI(Status *status) : status(status) {

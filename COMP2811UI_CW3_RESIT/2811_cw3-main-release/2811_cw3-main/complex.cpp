@@ -6,3 +6,6 @@
 #include <QWidget>
 #include <status.h>
 
+void complex :: work_time(){
+
+}
