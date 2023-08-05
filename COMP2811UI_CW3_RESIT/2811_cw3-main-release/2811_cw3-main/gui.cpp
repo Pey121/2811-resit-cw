@@ -25,6 +25,10 @@ void GUI::createWidgets()  {
     choice = new QSlider(Qt::Horizontal);
     tartem = new QLCDNumber;
     set = new QPushButton("Set");
+    levave = new QTimeEdit;
+    comeback = new QTimeEdit;
+    sleepshow = new QTimeEdit;
+    wake = new QTimeEdit;
 }
 
 void GUI::arrangeWidgets() {
@@ -33,27 +37,52 @@ void GUI::arrangeWidgets() {
     QLayout  *showlayout = new QVBoxLayout();
     QLayout  *turnlayout = new QHBoxLayout();
     QLayout  *tartem_layout = new QHBoxLayout();
+    QLayout  *modelayout = new QVBoxLayout();
+    QLayout  *mode_layout_out = new QHBoxLayout();
+    QLayout  *mode_layout_sleep = new QHBoxLayout();
+// set mode part (out)
+    QWidget * mode_widget_1 = new QWidget();
+    mode_layout_out -> addWidget(levave);
+    mode_layout_out -> addWidget(out);
+    mode_layout_out -> addWidget(comeback);
 
-    choice ->setMinimum(15); // set minmum value
-    choice->setMaximum(35); // set maxmium value
-    choice->setValue(25); // set default value 
+    mode_widget_1 -> setlayout(mode_layout_out);
 
-    tartem_layout->addWidget(choice);
+// set mode part (sleep)
+    QWidget * mode_widget_2 = new QWidget();
+    mode_layout_sleep -> addWidget(sleepshow);
+    mode_layout_sleep -> addWidget(sleep);
+    mode_layout_sleep -> addWidget(wake);
+
+    mode_widget_2 -> setlayout(mode_layout_sleep);
+
+// combine the two widget
+    QWidget * mode_part = new QWidget();
+    modelayout ->addWidget(mode_widget_1);
+    modelayout ->addWidget(mode_widget_2);
+    mode_part -> setlayout(mode_part);
+
+
+// set target part
+    choice->setRange(15, 35);
+
     tartem_layout->addWidget(tartem);
+    tartem_layout->addWidget(choice);
     tartem_layout->addWidget (set);
     connect(choice, &QSlider::valueChanged, tartem, QOverload<int>::of(&QLCDNumber::display));
     QWidget * settarget = new QWidget();
     settarget -> setLayout(tartem_layout);
 
-
+// turn on & off part
     turnlayout ->addWidget(off);
     turnlayout ->addWidget(on);
     QWidget * turn = new QWidget();
     turn ->setLayout(turnlayout);
 
     showlayout -> addWidget(timeDisplay);
-    showlayout -> addWidget( turn  );
+    showlayout -> addWidget(mode_part);
     showlayout -> addWidget(settarget);
+    showlayout -> addWidget( turn  );
     setLayout(showlayout);
 
 }

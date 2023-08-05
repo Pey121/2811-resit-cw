@@ -15,6 +15,7 @@
 #include <QSpinBox>
 #include <QSlider>
 #include <QLCDNumber>
+#include <QTimeEdit>
 #include <status.h>
 
 
@@ -33,6 +34,7 @@ class GUI : public QWidget {
     QSpinBox* a;
     QSlider* choice;
     QLCDNumber* tartem;
+    
 
 public:
     GUI(Status *status) : status(status) {
