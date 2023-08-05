@@ -9,7 +9,8 @@ CONFIG += c++11 console
 SOURCES += \
         gui.cpp \
         main.cpp\
-        status.cpp
+        status.cpp\
+        complex.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -18,4 +19,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     gui.h \
-    status.h
+    status.h\
+    complex.h
