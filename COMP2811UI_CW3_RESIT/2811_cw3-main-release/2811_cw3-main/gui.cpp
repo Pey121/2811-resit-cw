@@ -43,7 +43,7 @@ void GUI::arrangeWidgets() {
     tartem_layout->addWidget (set);
     connect(choice, &QSlider::valueChanged, tartem, QOverload<int>::of(&QLCDNumber::display));
     QWidget * settarget = new QWidget();
-    settarget -> setlayout(tartem_layout)
+    settarget -> setLayout(tartem_layout);
 
 
     turnlayout ->addWidget(off);

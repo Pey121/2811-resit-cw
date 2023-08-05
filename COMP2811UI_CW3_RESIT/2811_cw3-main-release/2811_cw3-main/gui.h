@@ -29,6 +29,7 @@ class GUI : public QWidget {
     QPushButton* off;
     QPushButton* out;
     QPushButton* sleep;
+    QPushButton* set;
     QSpinBox* a;
     QSlider* choice;
     QLCDNumber* tartem;
