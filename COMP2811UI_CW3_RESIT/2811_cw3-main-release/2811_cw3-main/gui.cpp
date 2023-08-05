@@ -23,6 +23,8 @@ void GUI::createWidgets()  {
     out  = new QPushButton("out" );
     sleep = new QPushButton("sleep");
     choice = new QSlider(Qt::Horizontal);
+    tartem = new QLCDNumber;
+    set = new QPushButton("Set");
 }
 
 void GUI::arrangeWidgets() {
@@ -32,7 +34,17 @@ void GUI::arrangeWidgets() {
     QLayout  *turnlayout = new QHBoxLayout();
     QLayout  *tartem_layout = new QHBoxLayout();
 
+    choice ->setMinimum(15); // set minmum value
+    choice->setMaximum(35); // set maxmium value
+    choice->setValue(25); // set default value 
+
+    tartem_layout->addWidget(choice);
     tartem_layout->addWidget(tartem);
+    tartem_layout->addWidget (set);
+    connect(choice, &QSlider::valueChanged, tartem, QOverload<int>::of(&QLCDNumber::display));
+    QWidget * settarget = new QWidget();
+    settarget -> setlayout(tartem_layout)
+
 
     turnlayout ->addWidget(off);
     turnlayout ->addWidget(on);
@@ -41,6 +53,7 @@ void GUI::arrangeWidgets() {
 
     showlayout -> addWidget(timeDisplay);
     showlayout -> addWidget( turn  );
+    showlayout -> addWidget(settarget);
     setLayout(showlayout);
 
 }
