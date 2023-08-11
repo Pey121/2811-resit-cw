@@ -99,7 +99,7 @@ void GUI::makeConnections() {
 }
 void GUI::setTargetTemperature(){
     float insideTemperature = status->getInsideTemperature();
-    int selectedTemperature = choice.value();
+    int selectedTemperature = choice->value();
 
     if (insideTemperature>selectedTemperature){
         status->boilerOn();

@@ -60,13 +60,7 @@ private:
 
     void makeConnections();
 
-    void setTargetTemperature();
 
-    void checkAndAdjustBoiler();
-
-    float targetTemperature;
-
-    Status* status;
 
 private slots:
 
