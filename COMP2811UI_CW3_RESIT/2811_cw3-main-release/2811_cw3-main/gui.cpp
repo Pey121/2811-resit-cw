@@ -98,14 +98,12 @@ void GUI::makeConnections() {
     connect(set,  SIGNAL(released()), this, SLOT(setTargetTemperature()));
 
 }
-void GUI::makeConnections(){
+void GUI::setTargetTemperature(){
     float insideTemperature = status->getInsideTemperature();
-    int selectedTemperature = choice->value();
+    int selectedTemperature = choice.value();
 
     if (insideTemperature>selectedTemperature){
         status->boilerOn();
-
-
     }
 }
 

@@ -49,6 +49,8 @@ public:
         makeConnections();
         setWindowTitle("Boiler GUI");
     }
+public slots:
+    void setTargetTemperature();
 
 private:
 
@@ -59,11 +61,12 @@ private:
     void makeConnections();
 
     void setTargetTemperature();
-    
+
     void checkAndAdjustBoiler();
 
     float targetTemperature;
 
+    Status* status;
 
 private slots:
 
