@@ -13,6 +13,8 @@
 #include <QWidget>
 #include <status.h>
 
+status = new Status();
+
 void GUI::createWidgets()  {
 
     // time display and boiler on/off buttons
@@ -93,19 +95,20 @@ void GUI::makeConnections() {
     // Alternately, you may chose to control the boiler using boilerOn/Off in timeChanged.
     connect(on ,  SIGNAL ( released() ), status,  SLOT ( boilerOn () ) );
     connect(off,  SIGNAL ( released() ), status,  SLOT ( boilerOff() ) );
-    connect(set, SIGNAL(released()), this, SLOT(setTargetTemperature()));
+    connect(set,  SIGNAL(released()), this, SLOT(setTargetTemperature()));
 
 }
-void GUI::setTargetTemperature() {
-    targetTemperature = tartem->value(); // Assuming tartem is the QLCDNumber widget.
-    status->boilerOn(); // Turn the boiler on.
+void GUI::makeConnections(){
+    float insideTemperature = status->getInsideTemperature();
+    int selectedTemperature = choice->value();
 
-    // Start a QTimer or similar mechanism to periodically check the inside temperature.
-    // If the inside temperature reaches or exceeds the target temperature, turn off the boiler.
-    QTimer *checkTemperatureTimer = new QTimer(this);
-    connect(checkTemperatureTimer, SIGNAL(timeout()), this, SLOT(checkAndAdjustBoiler()));
-    checkTemperatureTimer->start(1000); // Check every second.
+    if (insideTemperature>selectedTemperature){
+        status->boilerOn();
+
+
+    }
 }
+
 
 
 void GUI::timeChanged(QTime* time) {
