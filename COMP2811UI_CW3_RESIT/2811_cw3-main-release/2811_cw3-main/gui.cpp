@@ -13,7 +13,6 @@
 #include <QWidget>
 #include <status.h>
 
-status = new Status();
 
 void GUI::createWidgets()  {
 
@@ -98,7 +97,7 @@ void GUI::makeConnections() {
     connect(set,  SIGNAL(released()), this, SLOT(setTargetTemperature()));
 
 }
-void GUI::makeConnections(){
+void GUI::setTargetTemperature(){
     float insideTemperature = status->getInsideTemperature();
     int selectedTemperature = choice->value();
 
