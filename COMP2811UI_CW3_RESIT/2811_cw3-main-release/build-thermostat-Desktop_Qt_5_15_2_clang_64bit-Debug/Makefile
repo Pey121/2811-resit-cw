@@ -284,6 +284,7 @@ DIST          = /Users/Qt/6.2.4/macos/mkspecs/features/spec_pre.prf \
 		/Users/Qt/6.2.4/macos/mkspecs/features/qt_config.prf \
 		/Users/Qt/6.2.4/macos/mkspecs/macx-clang/qmake.conf \
 		/Users/Qt/6.2.4/macos/mkspecs/features/spec_post.prf \
+		../../2811_cw3-main/.qmake.stash \
 		/Users/Qt/6.2.4/macos/mkspecs/features/exclusive_builds.prf \
 		/Users/Qt/6.2.4/macos/mkspecs/features/mac/sdk.prf \
 		/Users/Qt/6.2.4/macos/mkspecs/features/toolchain.prf \
@@ -326,7 +327,7 @@ TARGET        = thermostat.app/Contents/MacOS/thermostat
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 13.3
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Library/Developer/CommandLineTools
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/peyy/2811-resit-cw/COMP2811UI_CW3_RESIT/2811_cw3-main-release/build-thermostat-Desktop_Qt_5_15_2_clang_64bit-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = arm64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -563,6 +564,7 @@ Makefile: ../../2811_cw3-main/thermostat.pro ../../../../Qt/6.2.4/macos/mkspecs/
 		../../../../Qt/6.2.4/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.2.4/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.2.4/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/6.2.4/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.2.4/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.2.4/macos/mkspecs/features/toolchain.prf \
@@ -817,6 +819,7 @@ Makefile: ../../2811_cw3-main/thermostat.pro ../../../../Qt/6.2.4/macos/mkspecs/
 ../../../../Qt/6.2.4/macos/mkspecs/features/qt_config.prf:
 ../../../../Qt/6.2.4/macos/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/6.2.4/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/6.2.4/macos/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/6.2.4/macos/mkspecs/features/mac/sdk.prf:
 ../../../../Qt/6.2.4/macos/mkspecs/features/toolchain.prf:
@@ -889,6 +892,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r thermostat.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
